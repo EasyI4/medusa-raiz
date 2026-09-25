@@ -69,6 +69,14 @@ FAMILY_REQUIRED_TERMS = {
 }
 
 
+_REPAIR_KIT_PATTERN = re.compile(
+    r"\b(?:KIT|JOGO|CONJUNTO)\b(?:\s+[A-Z0-9]+){0,3}\s+"
+    r"\b(?:REPARO|REPARACAO|REPARACION|REPARADOR|REPARADORA|REPAIR)\b"
+    r"|\b(?:REPARO|REPARACAO|REPARACION|REPARADOR|REPARADORA|REPAIR)\b"
+    r"(?:\s+[A-Z0-9]+){0,3}\s+\b(?:KIT|JOGO|CONJUNTO)\b"
+)
+
+
 def normalize_text(value: Any) -> str:
     normalized = unicodedata.normalize("NFKD", str(value or ""))
     normalized = "".join(char for char in normalized if not unicodedata.combining(char))
@@ -78,6 +86,12 @@ def normalize_text(value: Any) -> str:
 
 def normalize_code(value: Any) -> str:
     return re.sub(r"[^A-Z0-9]", "", normalize_text(value))
+
+
+def is_repair_kit(*values: Any) -> bool:
+    """Identifica kits de reparo sem confundir outros tipos de kit."""
+    normalized = " ".join(normalize_text(value) for value in values if value is not None)
+    return bool(_REPAIR_KIT_PATTERN.search(normalized))
 
 
 def normalize_manufacturer(value: Any) -> str | None:

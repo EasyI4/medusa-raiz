@@ -19,13 +19,12 @@ const status = computed(() => ({
     help: "Há correspondência parcial. Confirme versão, motor e ano antes da compra.",
   },
   AMBIGUOUS: {
-    label: "Confirme a aplicação",
+    label: "",
     help: "Faltam dados para garantir que esta peça serve no veículo.",
   },
 }[props.part.compatibility]))
 
 const primaryApplication = computed(() => props.part.applications[0] || null)
-const additionalApplications = computed(() => Math.max(0, props.part.applications.length - 1))
 const partTitle = computed(() => mainDescription(props.part.descriptions)
   || props.part.types[0]
   || "Peça encontrada")
@@ -134,11 +133,15 @@ function applicationFacts(application: PartApplication) {
         </div>
       </div>
       <div class="part-status">
-        <span class="compatibility-badge" :class="part.compatibility.toLowerCase()">
+        <span
+          v-if="part.compatibility !== 'AMBIGUOUS'"
+          class="compatibility-badge"
+          :class="part.compatibility.toLowerCase()"
+        >
           {{ status.label }}
         </span>
-        <span class="origin-badge" :class="part.origin">
-          {{ part.origin === "original" ? "Original" : "Linha alternativa" }}
+        <span v-if="part.origin === 'original'" class="origin-badge original">
+          Original
         </span>
       </div>
     </div>
@@ -161,9 +164,6 @@ function applicationFacts(application: PartApplication) {
           <span>Aplicação principal</span>
           <strong>{{ vehicleName(primaryApplication) || "Veículo não especificado" }}</strong>
         </div>
-        <small v-if="additionalApplications">
-          + {{ additionalApplications }} {{ additionalApplications === 1 ? "outra aplicação" : "outras aplicações" }}
-        </small>
       </div>
       <dl v-if="applicationFacts(primaryApplication).length" class="application-facts">
         <div v-for="fact in applicationFacts(primaryApplication)" :key="fact.label">
@@ -193,25 +193,5 @@ function applicationFacts(application: PartApplication) {
       <span v-for="warning in userWarnings" :key="warning">{{ warning }}</span>
     </div>
 
-    <details v-if="part.applications.length > 1" class="applications">
-      <summary class="applications-title">
-        Ver todas as aplicações <span>{{ part.applications.length }}</span>
-      </summary>
-      <div class="application-list">
-        <article
-          v-for="(application, applicationIndex) in part.applications"
-          :key="`${part.key}-${applicationIndex}`"
-          class="application-item"
-        >
-          <strong>{{ vehicleName(application) || "Veículo não especificado" }}</strong>
-          <dl v-if="applicationFacts(application).length">
-            <div v-for="fact in applicationFacts(application)" :key="fact.label">
-              <dt>{{ fact.label }}</dt>
-              <dd>{{ fact.value }}</dd>
-            </div>
-          </dl>
-        </article>
-      </div>
-    </details>
   </article>
 </template>

@@ -143,10 +143,8 @@
 .part-status { display: grid; justify-items: end; gap: var(--space-1); flex: none; }
 .origin-badge, .record-badge, .compatibility-badge { border-radius: var(--radius-round); padding: 0.22rem 0.48rem; font-size: 0.61rem; font-weight: 800; }
 .compatibility-badge.confirmed, .compatibility-badge.probable { color: var(--color-info); background: var(--color-info-soft); }
-.compatibility-badge.ambiguous { color: var(--color-warning); background: var(--color-warning-soft); }
 .compatibility-badge.full-confidence { color: var(--color-success); background: var(--color-success-soft); }
 .origin-badge.original { color: var(--color-success); background: var(--color-success-soft); }
-.origin-badge.parallel { color: var(--color-warning); background: var(--color-warning-soft); }
 .record-badge { color: var(--color-muted); background: var(--color-surface-strong); }
 
 .part-tags { display: flex; flex-wrap: wrap; gap: var(--space-1); margin: var(--space-2) 0 0 2.25rem; }
@@ -162,10 +160,8 @@
 .application-summary__head > small { border-radius: var(--radius-round); padding: 0.22rem 0.5rem; color: var(--color-info); background: var(--color-info-soft); font-size: 0.6rem; font-weight: 800; white-space: nowrap; }
 .application-facts { display: flex; flex-wrap: wrap; gap: var(--space-2); margin: 0; }
 .application-facts > div { min-width: 5.5rem; display: grid; gap: 0.12rem; border-left: 2px solid var(--color-border-strong); padding-left: var(--space-2); }
-.application-facts dt,
-.application-item dt { color: var(--color-muted); font-size: 0.54rem; font-weight: 800; text-transform: uppercase; }
-.application-facts dd,
-.application-item dd { margin: 0; color: var(--color-ink-soft); font-size: 0.68rem; overflow-wrap: anywhere; }
+.application-facts dt { color: var(--color-muted); font-size: 0.54rem; font-weight: 800; text-transform: uppercase; }
+.application-facts dd { margin: 0; color: var(--color-ink-soft); font-size: 0.68rem; overflow-wrap: anywhere; }
 .application-unavailable { margin: var(--space-3) 0 0 2.25rem; border-radius: var(--radius-sm); padding: 0.6rem 0.7rem; color: var(--color-muted); background: var(--color-surface-subtle); font-size: var(--text-xs); line-height: 1.5; }
 
 .equivalents { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1); margin: var(--space-3) 0 0 2.25rem; }
@@ -177,17 +173,6 @@
 .compatibility-warnings { display: grid; gap: var(--space-1); margin: var(--space-3) 0 0 2.25rem; border-left: 3px solid #efd28e; padding-left: var(--space-3); }
 .compatibility-warnings strong { color: var(--color-warning); font-size: 0.66rem; }
 .compatibility-warnings span { color: var(--color-ink-soft); font-size: 0.65rem; line-height: 1.45; }
-.applications { margin: var(--space-3) 0 0 2.25rem; border-top: 1px solid var(--color-border); padding-top: var(--space-3); }
-.applications-title { display: flex; align-items: center; gap: var(--space-2); color: var(--color-info); cursor: pointer; font-size: 0.68rem; font-weight: 800; list-style: none; }
-.applications-title::-webkit-details-marker { display: none; }
-.applications-title::before { width: 0.42rem; height: 0.42rem; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; content: ""; transform: rotate(-45deg); transition: transform var(--motion-fast); }
-.applications[open] .applications-title::before { transform: rotate(45deg) translate(-1px, -1px); }
-.applications-title span { min-width: 1.2rem; border-radius: var(--radius-round); padding: 0.12rem 0.35rem; color: var(--color-brand-700); background: var(--color-brand-100); text-align: center; }
-.application-list { display: grid; gap: var(--space-2); margin-top: var(--space-3); }
-.application-item { display: grid; gap: var(--space-2); border-radius: var(--radius-sm); padding: var(--space-3); background: var(--color-surface-subtle); }
-.application-item > strong { font-size: var(--text-xs); }
-.application-item dl { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-4); margin: 0; }
-.application-item dl > div { display: grid; gap: 0.1rem; }
 .result-footer { display: grid; gap: var(--space-1); border-top: 1px solid var(--color-border); padding-top: var(--space-4); }
 .result-footer p { margin: 0; color: var(--color-muted); font-size: 0.68rem; line-height: 1.5; }
 .result-footer strong { color: var(--color-ink); }
@@ -197,6 +182,6 @@
   .result-toolbar { align-items: flex-start; flex-direction: column; gap: var(--space-1); }
   .part-head { flex-wrap: wrap; }
   .part-status { width: 100%; display: flex; justify-items: start; padding-left: 2.25rem; }
-  .compatibility-help, .application-summary, .application-unavailable, .equivalents, .ai-part-assessment, .compatibility-warnings, .applications, .part-tags { margin-left: 0; }
+  .compatibility-help, .application-summary, .application-unavailable, .equivalents, .ai-part-assessment, .compatibility-warnings, .part-tags { margin-left: 0; }
   .application-summary__head { align-items: flex-start; flex-direction: column; }
 }
