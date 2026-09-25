@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+.venv/
+firebase-credentials.json
+*-firebase-adminsdk-*.json
+keys/*.json
+node_modules/
+web/node_modules/
+web/.nuxt/
+web/.output/

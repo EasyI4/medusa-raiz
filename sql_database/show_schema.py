@@ -30,7 +30,8 @@ class SqlDatabaseShowSchema:
         conforme o tipo de banco de dados (SQL Server, MySQL, PostgreSQL).
         """
         try:
-            if db_type.lower() == "sqlserver":
+            kind = db_type.strip().lower().replace(" ", "").replace("_", "").replace("-", "")
+            if kind in ("sqlserver", "mssql"):
                 query = textwrap.dedent(f"""
                     SELECT 
                         TABLE_CATALOG, 
@@ -42,7 +43,7 @@ class SqlDatabaseShowSchema:
                     WHERE TABLE_SCHEMA = '{schema}'
                     ORDER BY TABLE_NAME, ORDINAL_POSITION;
                 """)
-            elif db_type.lower() == "mysql":
+            elif kind == "mysql":
                 query = textwrap.dedent(f"""
                     SELECT 
                         TABLE_SCHEMA AS TABLE_CATALOG, 
@@ -54,7 +55,7 @@ class SqlDatabaseShowSchema:
                     WHERE TABLE_SCHEMA = '{database}' AND TABLE_NAME IS NOT NULL
                     ORDER BY TABLE_NAME, ORDINAL_POSITION;
                 """)
-            elif db_type.lower() == "postgresql":
+            elif kind in ("postgresql", "postgres", "postgree"):
                 query = textwrap.dedent(f"""
                     SELECT 
                         table_catalog AS TABLE_CATALOG, 

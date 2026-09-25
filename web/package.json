@@ -1,0 +1,21 @@
+{
+  "name": "allora-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev --port 3003",
+    "build": "nuxt build",
+    "typecheck": "nuxt typecheck",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "firebase": "^11.10.0",
+    "nuxt": "^3.17.5",
+    "vue": "^3.5.16",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.11"
+  }
+}

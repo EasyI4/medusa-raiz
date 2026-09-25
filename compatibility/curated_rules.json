@@ -1,0 +1,83 @@
+[
+  {
+    "action": "REJECT",
+    "code": "5708",
+    "part_family": "DISCO_FREIO",
+    "manufacturer": "JEEP",
+    "model": "COMPASS",
+    "year": 2020,
+    "reason": "Código corresponde a disco de embreagem, não a disco de freio."
+  },
+  {
+    "action": "REJECT",
+    "code": "35897",
+    "part_family": "DISCO_FREIO",
+    "manufacturer": "JEEP",
+    "model": "COMPASS",
+    "year": 2020,
+    "reason": "Código pertence a aplicação de motocicleta incompatível."
+  },
+  {
+    "action": "REJECT",
+    "code": "BD5086",
+    "part_family": "DISCO_FREIO",
+    "manufacturer": "JEEP",
+    "model": "COMPASS",
+    "year": 2020,
+    "reason": "Aplicação comprovada somente para geração/intervalo anterior."
+  },
+  {
+    "action": "REJECT",
+    "code": "C24021",
+    "part_family": "FILTRO_AR_MOTOR",
+    "manufacturer": "HONDA",
+    "model": "CIVIC",
+    "year": 2017,
+    "reason": "Referência não confirmada para Civic G10 2017."
+  },
+  {
+    "action": "REJECT",
+    "code": "HQ-2214A",
+    "part_family": "PASTILHA_FREIO",
+    "manufacturer": "HONDA",
+    "model": "CIVIC",
+    "year": 2018,
+    "reason": "Família OEM/aplicação incompatível com Civic 2018."
+  },
+  {
+    "action": "REJECT",
+    "code": "HQJ-2282A",
+    "part_family": "PASTILHA_FREIO",
+    "manufacturer": "HONDA",
+    "model": "CIVIC",
+    "year": 2018,
+    "reason": "Família OEM/aplicação incompatível com Civic 2018."
+  },
+  {
+    "action": "REJECT",
+    "code": "N-1457C",
+    "part_family": "PASTILHA_FREIO",
+    "manufacturer": "HONDA",
+    "model": "CIVIC",
+    "year": 2018,
+    "reason": "Família OEM/aplicação incompatível com Civic 2018."
+  },
+  {
+    "action": "REJECT",
+    "code": "NKF1251P",
+    "part_family": "PASTILHA_FREIO",
+    "manufacturer": "HONDA",
+    "model": "CIVIC",
+    "year": 2018,
+    "reason": "Família OEM/aplicação incompatível com Civic 2018."
+  },
+  {
+    "action": "REJECT",
+    "code": "NKF1350P",
+    "part_family": "PASTILHA_FREIO",
+    "manufacturer": "HONDA",
+    "model": "CIVIC",
+    "year": 2018,
+    "reason": "Família OEM/aplicação incompatível com Civic 2018."
+  }
+]

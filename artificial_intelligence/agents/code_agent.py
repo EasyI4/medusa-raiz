@@ -1,5 +1,5 @@
 import os
-from colorama import init, Fore, Style
+from colorama import init, Fore
 from openai import OpenAI
 from typing import Union
 
@@ -29,12 +29,9 @@ class CodeAgent:
                 ],
             )
             content = completion.choices[0].message.content.strip()
-            print(f"{Fore.CYAN}| Medusa |: {Style.RESET_ALL}{content}")
             return content
 
         except Exception as e:
-            error_msg = f"{Fore.RED}[ERRO] Falha ao consultar OpenAI: {e}"
-            print(error_msg)
             return {
                 "success": False,
                 "error": str(e)

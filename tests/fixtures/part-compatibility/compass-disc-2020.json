@@ -1,0 +1,18 @@
+{
+  "query": {
+    "raw_query": "Disco de freio Compass 2020",
+    "manufacturer": "JEEP",
+    "model": "COMPASS",
+    "year": 2020,
+    "part_family": "DISCO_FREIO"
+  },
+  "accepted": ["BD3608", "BD3610", "HF720E", "HF720F", "RCDI10760"],
+  "rejected": ["5708", "35897", "BD5086"],
+  "position_by_code": {
+    "BD3608": "FRONT",
+    "BD3610": "REAR",
+    "HF720E": "FRONT",
+    "HF720F": "REAR",
+    "RCDI10760": "FRONT"
+  }
+}

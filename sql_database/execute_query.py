@@ -1,4 +1,3 @@
-import pyodbc
 from sql_database.connection import SqlDatabaseConnection
 
 class SqlDatabaseExecuteQuery:

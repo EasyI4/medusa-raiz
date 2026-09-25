@@ -1,0 +1,18 @@
+{
+  "query": {
+    "raw_query": "Pastilha de freio Civic 2018",
+    "manufacturer": "HONDA",
+    "model": "CIVIC",
+    "year": 2018,
+    "part_family": "PASTILHA_FREIO"
+  },
+  "accepted_front": [
+    "F03B076203", "FP266", "PW266", "GDB9066", "2356",
+    "N-1758", "N-1758C", "PD/1526", "PD/1526-CMAXX"
+  ],
+  "accepted_rear": [
+    "F03B076300", "FP267", "PW267", "GDB9136",
+    "N-2039", "N-2039C", "PD/1527", "PD/1527-CMAXX"
+  ],
+  "rejected": ["HQ-2214A", "HQJ-2282A", "N-1457C", "NKF1251P", "NKF1350P"]
+}

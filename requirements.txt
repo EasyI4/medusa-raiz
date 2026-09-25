@@ -1,0 +1,7 @@
+Flask>=3.0
+gunicorn>=22.0
+firebase-admin>=6.5
+openai>=1.40
+colorama>=0.4
+pyodbc>=5.1
+psycopg2-binary>=2.9

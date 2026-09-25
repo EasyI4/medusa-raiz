@@ -1,0 +1,14 @@
+{
+  "query": {
+    "raw_query": "Filtro de ar Civic 2017",
+    "manufacturer": "HONDA",
+    "model": "CIVIC",
+    "year": 2017,
+    "part_family": "FILTRO_AR_MOTOR"
+  },
+  "engine_groups": {
+    "1.5 TURBO": ["ARL1042", "JFA0426", "LX4763", "C24059"],
+    "2.0": ["ARL1043", "JFA0405", "LX4762"]
+  },
+  "rejected": ["C24021"]
+}
