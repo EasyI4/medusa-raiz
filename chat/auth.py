@@ -1,3 +1,4 @@
+import base64
 import json
 import os
 
@@ -34,8 +35,14 @@ def _init_firebase():
     if firebase_admin._apps:
         return
 
+    encoded = os.getenv("FIREBASE_CREDENTIALS_BASE64", "").strip()
     raw = os.getenv("FIREBASE_CREDENTIALS_JSON", "").strip()
     path = os.getenv("FIREBASE_CREDENTIALS_PATH", "").strip()
+
+    if encoded:
+        decoded = base64.b64decode(encoded, validate=True).decode("utf-8")
+        firebase_admin.initialize_app(credentials.Certificate(json.loads(decoded)))
+        return
 
     if raw:
         firebase_admin.initialize_app(credentials.Certificate(json.loads(raw)))
@@ -46,7 +53,8 @@ def _init_firebase():
         return
 
     raise FirebaseNotConfigured(
-        "Firebase Admin não configurado. Defina FIREBASE_CREDENTIALS_JSON ou FIREBASE_CREDENTIALS_PATH."
+        "Firebase Admin não configurado. Defina FIREBASE_CREDENTIALS_BASE64, "
+        "FIREBASE_CREDENTIALS_JSON ou FIREBASE_CREDENTIALS_PATH."
     )
 
 
